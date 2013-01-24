@@ -20,6 +20,10 @@ module Marginalia
           alias_method :exec_no_cache_without_marginalia, :exec_no_cache
           alias_method :exec_no_cache, :exec_no_cache_with_marginalia
         end
+        if defined? :exec_cache
+          alias_method :exec_cache_without_marginalia, :exec_cache
+          alias_method :exec_cache, :exec_cache_with_marginalia
+        end
       end
     end
 
@@ -33,6 +37,10 @@ module Marginalia
 
     def exec_no_cache_with_marginalia(sql, binds)
       exec_no_cache_without_marginalia(marginalize_sql(sql), binds)
+    end
+    
+    def exec_cache_with_marginalia(sql, binds)
+      exec_cache_without_marginalia(marginalize_sql(sql), binds)
     end
 
     def marginalize_sql(sql)
