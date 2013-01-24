@@ -1,3 +1,6 @@
+# FORK of https://github.com/37signals/marginalia
+- added some aliases for postgresql adapter in activerecord 3.2.11
+
 # marginalia [![Build Status](https://secure.travis-ci.org/37signals/marginalia.png?branch=master)](http://travis-ci.org/37signals/marginalia)
 
 Attach comments to your ActiveRecord queries. By default, it adds the application, controller, and action names as a
